@@ -13,6 +13,7 @@ wp-content/themes/twenty*/
 # ignore node dependency directories
 node_modules/
 bower_components/
+!wp-content/themes/divi-child-theme/src/scss/bower_components/
 
 # ignore log files and databases
 *.log
