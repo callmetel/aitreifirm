@@ -2,15 +2,12 @@
 	add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 	function theme_enqueue_styles() {
 	  wp_enqueue_style( 'divi', get_template_directory_uri() . '/style.css' );
-	  wp_enqueue_style( 'divi-child', get_stylesheet_directory_uri() . '/style.css' );
+	  wp_enqueue_style( 'divi-child', get_stylesheet_directory_uri() . '/css/style.css' );
 	}
 
 	// Remove Disable jQuery
 	function load_custom_scripts() {
-	    wp_deregister_script( 'jquery' );
-	    wp_register_script('jquery', get_stylesheet_directory_uri() . '/jquery-2.2.4.min.js', true); // true will place script in the footer
-	    wp_enqueue_script( 'jquery' );
-	    wp_register_script('custom_script', get_stylesheet_directory_uri() . '/scripts.min.js', 'jquery', true); // true will place script in the footer
+	    wp_register_script('custom_script', get_stylesheet_directory_uri() . '/js/scripts.min.js', 'jquery', true); // true will place script in the footer
 	    wp_enqueue_script( 'custom_script' );
 	}
 

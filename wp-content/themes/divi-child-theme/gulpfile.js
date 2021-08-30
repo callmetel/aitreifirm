@@ -11,12 +11,10 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var replace = require('gulp-replace');
 var plumber = require('gulp-plumber');
-var rename = require('gulp-rename');
-
 
 // File paths
 const files = { 
-    htmlPath: '*.html',
+    phpPath: '*.php',
     scssPath: 'src/scss/**/*.scss',
     jsPath: 'src/js/**/*.js'
 }
@@ -27,9 +25,8 @@ function scssTask(){
         .pipe(sourcemaps.init()) // initialize sourcemaps first
         .pipe(sass()) // compile SCSS to CSS
         .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
-        .pipe(rename('style.min.css'))
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-        .pipe(dest('.')
+        .pipe(dest('css/')
     ); // put final CSS in dist folder
 }
 
@@ -43,26 +40,26 @@ function jsTask(){
         .pipe(concat('scripts.min.js'))
         .pipe(plumber.stop())
         .pipe(terser())
-        .pipe(dest('.')
+        .pipe(dest('js/')
     );
 }
 
 // Cachebust
-// function cacheBustTask(){
-//     var cbString = new Date().getTime();
-//     return src(['index.html'])
-//         .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
-//         .pipe(dest('.'));
-// }
+function cacheBustTask(){
+    var cbString = new Date().getTime();
+    return src(['index.php'])
+        .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
+        .pipe(dest('.'));
+}
 
 // Watch task: watch SCSS and JS files for changes
 // If any change, run scss and js tasks simultaneously
 function watchTask(){
-    watch([files.htmlPath, files.scssPath, files.jsPath],
+    watch([files.phpPath, files.scssPath, files.jsPath],
         {interval: 1000, usePolling: true}, //Makes docker work
         series(
             parallel(scssTask, jsTask),
-            // cacheBustTask
+            cacheBustTask
         )
     ).on('change', function(event) {
         /* Act on the event */
@@ -74,6 +71,6 @@ function watchTask(){
 // then runs cacheBust, then watch task
 exports.default = series(
     parallel(scssTask, jsTask), 
-    // cacheBustTask,
+    cacheBustTask,
     watchTask
 );

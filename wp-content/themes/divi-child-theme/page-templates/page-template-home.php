@@ -40,15 +40,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 			<div class="entry-content">
 
 				<!-- Subpage Banner -->
-				test
 				<?php 
 					// Get Featured Image 
 
 				    if ( has_post_thumbnail( $post->ID ) ) :
 				        $imageInfo = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 				        $imageUrl = $imageInfo[0];
-				    else:
-				        $imageUrl = '/wp-content/uploads/banner-about.jpg';
 				    endif;
 				  ?>
 

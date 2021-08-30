@@ -29,10 +29,6 @@ $trans-cubic : cubic-bezier(0.48, 0.96, 0.57, 1.02);
 
 
 // #Breakpoints
-// $breakpoints: (
-//   'large':  ( max-width: 1200px )
-// );
-
 $breakpoints: (
   'small':  767px,
   'medium': 980px,
@@ -41,7 +37,6 @@ $breakpoints: (
 
 
 // #File-Paths
-$path-img  : '../../assets/img';
-$path-font : '../../assets/fonts';
+$path-uploads  : '../../uploads';
+$path-theme : '../';
 
-$breakpoint-tablet: 1200px;
