@@ -1,0 +1,109 @@
+// #Our Mission-Styles
+
+body {
+	#testimonials {
+		background: $blue;
+		padding: 100px 0 120px;
+
+		@include mq(tablet,max) {
+			padding: 100px 0;
+		}
+
+		.testimonials-ttl {
+			color: $white;
+			font-family: $bfont;
+			font-size: 13px;
+			font-weight: $med;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			text-align: center;
+			padding-bottom: 60px;
+		}
+
+		#testimonial-slider {
+			padding: 0 5.25vw;
+			cursor: grab;
+
+			.splide__arrows {
+				opacity: 0;
+				transition: opacity .2s ease-in-out;
+
+				.splide__arrow {
+					background: transparent;
+
+					&--prev {
+						left: 0;
+					}
+
+					&--next {
+						right: 0;
+					}
+
+					svg {
+						path {
+							fill: $white;
+						}
+					}
+				}
+			}
+
+			.splide__track {
+				.splide__list {
+					.splide__slide {
+						.review {
+							display: block;
+							font-family: $hfontalt;
+							font-size: 34px;
+							line-height: 1.2;
+							color: $white;
+							padding-bottom: 40px;
+							margin-bottom: 20px;
+							border-bottom: 1px solid transparentize($white,0.7);
+
+							@include mq(phone-wide,max) {
+								font-size: 24px;
+							}
+						}
+					}
+
+					.info {
+						display: block;
+
+						.client {
+							display: block;
+							font-family: $bfont;
+							font-size: 13px;
+							font-weight: $med;
+							letter-spacing: 0.1em;
+							line-height: 1;
+							text-transform: uppercase;
+							padding-bottom: 8px;
+							color: $white;
+						}
+
+						.title {
+							display: block;
+							font-family: $hfontalt;
+							font-size: 14px;
+							line-height: 1;
+							color: $white;
+							padding-bottom: 0;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				.splide__arrows {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&.page-template-page-template-options {
+		#testimonials {
+			background: $darkblue;
+		}
+	}
+}

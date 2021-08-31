@@ -1,0 +1,60 @@
+// #Our Mission-Styles
+
+body {
+	#our-mission {
+		background: $cream;
+		padding: 100px 0;
+
+		.image-col {
+			@include mq(tablet,max) {
+				display: none;
+			}
+
+			.image {
+				display: block;
+				@include size(90%,54vw);
+				max-height: 600px;
+				background-image: url('#{$path-uploads}/pexels-rodnae-productions-6646816.jpeg');
+				background-size: cover;
+				background-position: center;
+				margin-top: -150px;
+			}
+		}
+
+		.text-col {
+			.text {
+				* {
+					&:not(.btn) {
+						color: $darkblue;
+					}
+				}
+
+				.btn {
+					margin: 30px 0;
+
+					@include mq(tablet,max) {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&.page-template-page-template-about {
+		#our-mission {
+			background: $blue;
+
+			.text-col {
+				.text {
+					* {
+						color: $white;
+					}
+
+					.btn {
+						background: $tan;
+					}
+				}
+			}
+		}
+	}
+}

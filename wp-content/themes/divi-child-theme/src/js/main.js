@@ -172,4 +172,16 @@ jQuery(document).ready(function ($) {
       });
     }
   }
+
+  $(window).scroll(function(){
+    var ScrollTop = parseInt($(window).scrollTop());
+    console.log(ScrollTop);
+
+    if (ScrollTop > 10) {
+      $('#main-header').addClass('et-fixed-header');
+    }
+    else {
+      $('#main-header').removeClass('et-fixed-header');
+    }
+  }).scroll();
 });

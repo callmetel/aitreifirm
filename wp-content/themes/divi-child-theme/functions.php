@@ -51,15 +51,6 @@
 	remove_action('wp_head', 'print_emoji_detection_script', 7);
 	remove_action('wp_print_styles', 'print_emoji_styles');
 
-	// Yoast Snippet
-	add_filter( 'wpseo_robots', 'my_robots_func' );
-	function my_robots_func( $robotsstr ) {
-		if ( is_page() && is_paged() ) {
-			return 'noindex,follow';		
-		}
-		return $robotsstr;
-	}
-
 	// Allow SVG Uploads
 	function cc_mime_types($mimes) {
 	  $mimes['svg'] = 'image/svg+xml';
@@ -84,19 +75,6 @@
 	    }
 	}
 	add_action('admin_init', 'wpb_imagelink_setup', 10);
-
-
-	// Move Gravity Forms Scripts to the Footer
-	add_filter( 'gform_cdata_open', 'wrap_gform_cdata_open' );
-	function wrap_gform_cdata_open( $content = '' ) {
-		$content = 'document.addEventListener( "DOMContentLoaded", function() { ';
-		return $content;
-	}
-	add_filter( 'gform_cdata_close', 'wrap_gform_cdata_close' );
-	function wrap_gform_cdata_close( $content = '' ) {
-		$content = ' }, false );';
-		return $content;
-	}
 
 	// Disable support for comments and trackbacks in post types
 	function df_disable_comments_post_types_support() {

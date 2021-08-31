@@ -61,6 +61,13 @@ h2,.h2 {
 }
 
 h3,.h3 {
+  font-size: 62px;
+  line-height: 1.16;
+  padding-bottom: 20px;
+
+  @include mq(phone-wide,max) {
+    font-size: 52px;
+  }
 }
 
 h4,.h4 {
@@ -72,12 +79,19 @@ h5,.h5 {
 .ttl {
 }
 
-html,body,p,li,div {
+html,body,p,li,div,input {
   font-family: $bfont;
   font-weight: 400;
 }
 
 p {
+  font-family: $hfontalt;
+  font-size: 18px;
+  line-height: 1.8;
+
+  @include mq(phone-wide,max) {
+    font-size: 16px;
+  }
 }
 
 p:empty {
@@ -91,6 +105,6 @@ a,span {
   font-family: inherit;
 }
 
-input,textarea,button {
+textarea,button {
   font-family: $hfontalt;
 }

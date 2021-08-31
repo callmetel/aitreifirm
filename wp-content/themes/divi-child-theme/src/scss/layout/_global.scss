@@ -1,1 +1,9 @@
 // #Global Styles
+
+.gform_wrapper {
+	.gform_validation_errors {
+		> h2 {
+			font-family: $bfont;
+		}
+	}
+}

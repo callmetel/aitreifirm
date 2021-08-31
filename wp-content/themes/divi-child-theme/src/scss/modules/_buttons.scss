@@ -1,10 +1,24 @@
 // #Button-Styles
 
-.btn {
+.btn,input[type="submit"] {
   cursor: pointer;
   display: table;
   text-transform: uppercase;
   text-align: center;
+  font-size: 18px;
+  line-height: 1;
+  font-family: $bfont;
+  font-weight: $med;
+  color: $white;
+  background: $blue;
+  padding: 18px 35px;
+  letter-spacing: .12em;
+  margin: 20px 0;
+
+  @include mq(phone-wide,max) {
+  	font-size: 14px;
+  	padding: 12px 24px;
+  }
 
 	&--inline {
 	  display: inline-table;
