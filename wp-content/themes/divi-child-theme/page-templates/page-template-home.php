@@ -9,7 +9,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 ?>
 
-<?php if ( ! $is_page_builder_used ) : ?>
+<?php
+	get_template_part( 'partials/global', 'comparison_chart' );
+?>
+
+<?php /* if ( ! $is_page_builder_used ) : ?>
 
 <div id="main-content">
 
@@ -139,6 +143,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 	<?php endwhile; ?>
 
-<?php endif; ?>
+<?php endif; */?>
 
 <?php get_footer(); ?>
