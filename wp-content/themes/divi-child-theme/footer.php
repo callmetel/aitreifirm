@@ -16,6 +16,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
 			<div id="pre-footer">
 				<?php
+					get_template_part( 'partials/prefooter', 'lead_form' );
 					get_template_part( 'partials/prefooter', 'testimonials' );
 					get_template_part( 'partials/prefooter', 'mission' );
 				?>

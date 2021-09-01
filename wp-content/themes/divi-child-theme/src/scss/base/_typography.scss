@@ -40,9 +40,9 @@
 }
 
 @font-face {
-    font-family: 'Freight Text';
-    src: url('#{$path-theme}/fonts/FreightTextBookItalic.woff2') format('woff2'),
-        url('#{$path-theme}/fonts/FreightTextBookItalic.woff') format('woff');
+    font-family: 'Freight';
+    src: url('#{$path-theme}/fonts/Freight-TextBookItalic.woff2') format('woff2'),
+        url('#{$path-theme}/fonts/Freight-TextBookItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -58,6 +58,13 @@ h1,.h1 {
 }
 
 h2,.h2 {
+  font-size: 84px;
+  line-height: 1;
+  padding-bottom: 40px;
+
+  @include mq(phone-wide,max) {
+    font-size: 70px;
+  }
 }
 
 h3,.h3 {
@@ -87,6 +94,7 @@ html,body,p,li,div,input {
 p {
   font-family: $hfontalt;
   font-size: 18px;
+  font-style: italic;
   line-height: 1.8;
 
   @include mq(phone-wide,max) {
@@ -106,5 +114,5 @@ a,span {
 }
 
 textarea,button {
-  font-family: $hfontalt;
+  font-family: $bfont;
 }

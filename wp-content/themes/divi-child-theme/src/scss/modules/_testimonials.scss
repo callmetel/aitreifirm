@@ -53,8 +53,9 @@ body {
 						.review {
 							display: block;
 							font-family: $hfontalt;
+							font-style: italic;
 							font-size: 34px;
-							line-height: 1.2;
+							line-height: 1.34;
 							color: $white;
 							padding-bottom: 40px;
 							margin-bottom: 20px;
@@ -72,6 +73,7 @@ body {
 						.client {
 							display: block;
 							font-family: $bfont;
+							font-style: normal;
 							font-size: 13px;
 							font-weight: $med;
 							letter-spacing: 0.1em;
@@ -84,6 +86,7 @@ body {
 						.title {
 							display: block;
 							font-family: $hfontalt;
+							font-style: italic;
 							font-size: 14px;
 							line-height: 1;
 							color: $white;

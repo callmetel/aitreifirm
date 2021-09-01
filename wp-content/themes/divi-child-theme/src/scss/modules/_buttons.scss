@@ -11,9 +11,13 @@
   font-weight: $med;
   color: $white;
   background: $blue;
-  padding: 18px 35px;
+  padding: 14px 30px;
   letter-spacing: .12em;
   margin: 20px 0;
+  appearance: none;
+  box-shadow: none;
+  border: 2px solid $blue;
+  transition: all .25s ease-in-out;
 
   @include mq(phone-wide,max) {
   	font-size: 14px;
@@ -27,5 +31,10 @@
 		  margin-right: 15px;
 		  margin-bottom: 15px;
 		}
+	}
+
+	&:hover {
+		background: transparent;
+		color: $blue;
 	}
 }
