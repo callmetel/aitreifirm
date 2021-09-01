@@ -129,7 +129,7 @@
 					justify-content: flex-start;
 					text-align: left;
 
-					&:nth-of-type(even) {
+					&:nth-of-type(odd) {
 						background: $cream;
 					}
 
@@ -159,7 +159,7 @@
 					background: $offwhite;
 					font-weight: $norm;
 
-					&:nth-of-type(even) {
+					&:nth-of-type(odd) {
 						background: $cream;
 					}
 
@@ -175,7 +175,7 @@
 					background: $blue;
 					font-weight: $semi;
 
-					&:nth-of-type(even) {
+					&:nth-of-type(odd) {
 						background: $lightblue;
 					}
 
