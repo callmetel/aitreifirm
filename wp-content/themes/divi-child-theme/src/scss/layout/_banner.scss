@@ -1,0 +1,52 @@
+// #Banner-Styles
+
+.banner {
+	&-internal {
+		padding: 130px 0;
+
+		.page-title {
+			text-align: center;
+			color: $darkblue;
+			padding-bottom: 0;
+
+			span {
+				display: block;
+				&.sub-title {
+					font-family: $bfont;
+					font-size: 22px;
+					line-height: 1;
+					font-weight: $norm;
+					text-transform: uppercase;
+					letter-spacing: 0.1em;
+					text-align: center;
+					padding-bottom: 25px;
+
+					@include mq(tablet-small,max) {
+						font-size: 20px;
+					}
+
+					@include mq(phone-wide,max) {
+						font-size: 18px;
+					}
+				}
+			}
+
+			&:after {
+				content:'';
+				display: block;
+				@include size(200px,8px);
+				max-width: 100%;
+				background: $tan;
+				margin: 30px auto 0;
+
+				@include mq(tablet-small,max) {
+					width: 175px;
+				}
+
+				@include mq(phone-wide,max) {
+					width: 150px;
+				}
+			}
+		}
+	}
+}

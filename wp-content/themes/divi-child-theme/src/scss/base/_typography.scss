@@ -55,6 +55,17 @@ h1,h2,h3,h4,h5,h6,
 }
 
 h1,.h1 {
+  font-size: 100px;
+  line-height: 1;
+  padding-bottom: 50px;
+
+  @include mq(tablet-small,max) {
+    font-size: 90px;
+  }
+
+  @include mq(phone-wide,max) {
+    font-size: 70px;
+  }
 }
 
 h2,.h2 {
@@ -63,7 +74,7 @@ h2,.h2 {
   padding-bottom: 40px;
 
   @include mq(phone-wide,max) {
-    font-size: 70px;
+    font-size: 65px;
   }
 }
 
