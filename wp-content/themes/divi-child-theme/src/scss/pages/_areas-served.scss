@@ -1,0 +1,68 @@
+// #Areas Served-Styles
+
+body {
+	&.page-template-page-template-areas_served {
+
+	}
+
+	&.page-template-page-template-areas_served_single {
+		.sbpg-cntnt-sctn {
+			padding: 70px 0!important;
+
+			.sbpg-cntnt-rw {
+				background: $cream;
+				padding: 50px!important;
+				position: relative;
+
+				&:before {
+					@include mq(tablet,min) {
+						content: '';
+						display: block;
+						@include size(1px,calc(100% - 100px));
+						background: $tan;
+						@include position(absolute, top 50px left 50%);
+						transform: translateX(-50%);
+					}
+				}
+
+				.sbpg-cntnt-col {
+					@include mq(tablet,min) {
+						width: 50%!important;
+						margin: 0!important;
+						padding: 20px 0;
+						display: flex;
+						flex-direction: column;
+					}
+
+					&-1 {
+						@include mq(tablet,min) {
+							padding-right: 9vw;
+						}
+
+						@include mq(tablet,max) {
+							padding-bottom: 50px;
+							margin-bottom: 50px;
+							border-bottom: 1px solid $tan;
+						}
+					}
+					&-2 {
+						@include mq(tablet,min) {
+							padding-left: 9vw;
+						}
+					}
+
+					.sbpg-cntnt {
+						p {
+							color: $darkblue;
+						}
+					}
+				}
+			}
+		}
+
+		#comparison-chart {
+			background: $white;
+			padding: 50px 0 100px;
+		}
+	}
+}

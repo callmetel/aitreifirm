@@ -5,20 +5,22 @@
 <?php endif;
 
 if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
-			<?php 
-				$classes = get_body_class();
-
-				// Pre-Footer Divi Library Items
-				// if (in_array('show-testimonials-prefooter',$classes)) {
-			 	//   echo do_shortcode('[et_pb_section global_module="13"][/et_pb_section]');
-				// };
-			?>
-
 			<div id="pre-footer">
 				<?php
 					get_template_part( 'partials/prefooter', 'lead_form' );
-					get_template_part( 'partials/prefooter', 'testimonials' );
-					get_template_part( 'partials/prefooter', 'mission' );
+					if ( 
+						!is_page_template( 'page-templates/page-template-about.php' )
+					):
+						get_template_part( 'partials/prefooter', 'testimonials' );
+					endif;
+
+					if ( 
+						is_page_template( 'page-templates/page-template-home.php' ) ||
+						is_page_template( 'page-templates/page-template-about.php' ) ||
+						is_page_template( 'page-templates/page-template-areas_served_single.php' )
+					):
+						get_template_part( 'partials/prefooter', 'mission' );
+					endif;
 				?>
 			</div>
 

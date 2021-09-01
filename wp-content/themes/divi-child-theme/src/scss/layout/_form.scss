@@ -1,0 +1,100 @@
+// #Form Styles
+
+.gform_wrapper {
+	.gform_validation_errors {
+		> h2 {
+			font-family: $bfont;
+		}
+	}
+}
+
+.form-title {
+	text-align: center;
+	color: $darkblue;
+}
+
+.form-indicator {
+	color: $tan;
+	font-size: 16px;
+	display: block;
+	padding-bottom: 0;
+	margin-bottom: 5px;
+}
+
+.lead-form_wrapper {
+	.lead-form {
+		.gform_fields {
+			grid-row-gap: 30px;
+
+			.gfield {
+				&.field-address {
+					span {
+						margin: 0;
+
+						&:not(.address_line_1) {
+							display: none;
+						}
+					}
+				}
+
+				label,.gfield_label {
+					display: none;
+				}
+
+				input {
+					font-family: $bfont;
+					font-size: 18px;
+					font-weight: $norm;
+					letter-spacing: 0.04em;
+					line-height: 1;
+					color: $darkbrown;
+					padding: 10px 15px;
+					border: 0;
+					border-bottom: 3px solid $tan;
+					background-color: transparent;
+
+					@include mq(phone-wide,max) {
+						font-size: 16px;
+					}
+
+					&::placeholder {
+						color: $darkbrown;
+					}
+				}
+			}
+		}
+
+		.gform_footer {
+			padding: 0!important;
+			margin-top: 30px!important;
+			position: relative;
+
+			&:before {
+				content: "\24";
+				font-family: $ifont;
+		    color: $tan;
+		    font-size: 24px;
+		    line-height: 1;
+		    font-weight: $norm;
+		    position: absolute;
+		    right: 0;
+		    top: 50%;
+		    transform: translateY(-50%);
+			}
+
+			input[type="submit"] {
+				margin: 0!important;
+				background: transparent!important;
+				color: $darkblue!important;
+				text-transform: initial;
+				font-size: 18px;
+				font-weight: $med;
+				letter-spacing: 0.04em;
+				border: 0!important;
+				padding: 0 28px 0 0!important;
+				margin-left: auto!important;
+				margin-right: 0!important;
+			}
+		}
+	}
+}

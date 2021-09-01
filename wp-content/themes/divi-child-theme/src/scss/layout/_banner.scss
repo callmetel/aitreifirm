@@ -48,5 +48,61 @@
 				}
 			}
 		}
+
+		&-img {
+			padding: 100px 0;
+			position: relative;
+			background-position: top left;
+			background-size: cover;
+			position: relative;
+
+			@include mq(tablet,max) {
+				padding: 0;
+			}
+
+			&:before {
+				@include mq(tablet,min) {
+					content: '';
+					display: block;
+					@include size(100%,100%);
+					background-image: url('#{$path-uploads}/white-fade.png');
+					background-size: 66% 100%;
+					background-position: top left;
+					background-repeat: no-repeat;
+					@include position(absolute,top 0 left 0);
+					z-index: 5;
+				}
+			}
+
+			.sbpg-bnnr-rw {
+				position: relative;
+				z-index: 10;
+
+				.sbpg-bnnr-col {
+					@include mq(tablet,max) {
+						margin: 0!important;
+					}
+
+					.sbpg-bnnr {
+						@include mq(tablet,min) {
+							text-align: left;
+						}
+
+						.page-title {
+							@include mq(tablet,min) {
+								text-align: left;
+							}
+
+							&:after {
+								@include mq(tablet,min) {
+									margin-left: 0;
+									margin-right: auto;
+								}
+							}
+						}
+					}	
+				}
+			}
+		}
 	}
 }

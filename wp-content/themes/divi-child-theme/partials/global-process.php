@@ -42,6 +42,7 @@
                 <h6 class="step-title">Get Paid</h6>
                 <p class="step-description">Once the title clears, remaining balance is submitted and you get paid!</p>
               </div>
+            </div>
           </div>
         </div>
       </div>
