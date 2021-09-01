@@ -11,6 +11,7 @@
     <div class="form-col et_pb_column et_pb_column_1_2 et_pb_css_mix_blend_mode_passthrough et-last-child">
       <div class="form-wrapper et_pb_code et_pb_module">
         <div class="et_pb_code_inner">
+          <h3 class="form-title">Get Started Today</h3>
           <p class="form-indicator">*Required Fields</p>
           <?php echo do_shortcode('[gravityform id="2" title="false" description="false" ajax="true" tabindex="1"]'); ?>
         </div>
