@@ -1,0 +1,17 @@
+// #Options-Styles
+
+.page-template-page-template-options {
+	background: $darkblue;
+
+	#banner {
+		background: $darkblue;
+
+		.page-title {
+			color: $white;
+
+			&:after {
+				background: $tan;
+			}
+		}
+	}
+}

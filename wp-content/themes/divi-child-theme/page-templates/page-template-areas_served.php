@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Options Page
+Template Name: Areas Served Page
 */
 
 get_header();
@@ -45,7 +45,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								<div class="et_pb_text_inner">
 									<h1 class="page-title">
 										<span class="sub-title"><?php the_title(); ?></span>
-										<span class="main-title">What We Offer</span>
+										<span class="main-title">Where We Are</span>
 									</h1>	
 								</div>
 							</div> <!-- .et_pb_text -->

@@ -1,0 +1,17 @@
+// #Partners-Styles
+
+.page-template-page-template-partners {
+	background: $tan;
+
+	#banner {
+		background: $tan;
+
+		.page-title {
+			color: $white;
+
+			&:after {
+				background: $blue;
+			}
+		}
+	}
+}

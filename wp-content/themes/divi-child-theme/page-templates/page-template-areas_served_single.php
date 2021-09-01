@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Options Page
+Template Name: Areas Served City Page
 */
 
 get_header();
@@ -38,14 +38,22 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 			<div class="entry-content">
 
 				<!-- Subpage Banner -->
-				<div id="banner" class="banner banner-internal et_pb_section sbpg-bnnr-sctn et_section_regular">
+				<?php 
+					// Get Featured Image 
+
+				    if ( has_post_thumbnail( $post->ID ) ) :
+				        $imageInfo = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+				        $imageUrl = $imageInfo[0];
+				    endif;
+				  ?>
+
+				<div id="banner" class="banner banner-internal et_pb_section sbpg-bnnr-sctn et_pb_with_background et_section_regular" style="background-image: url('<?php echo $imageUrl; ?>'); background-size: cover;">
 					<div class="sbpg-bnnr-rw stndrd-rw et_pb_row">
 						<div class="sbpg-bnnr-col et_pb_column et_pb_column_4_4">
 							<div class="sbpg-bnnr et_pb_text et_pb_module et_pb_bg_layout_light">
 								<div class="et_pb_text_inner">
 									<h1 class="page-title">
-										<span class="sub-title"><?php the_title(); ?></span>
-										<span class="main-title">What We Offer</span>
+										<span class="main-title"><?php the_title(); ?></span>
 									</h1>	
 								</div>
 							</div> <!-- .et_pb_text -->
