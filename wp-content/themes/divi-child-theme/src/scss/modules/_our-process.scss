@@ -1,0 +1,117 @@
+// #Our Process-Styles
+
+body {
+
+	#our-process {
+		background: $cream;
+		padding: 100px 0;
+
+		.sm-rw {
+			@include mq(tablet,min) {
+				display: flex;
+				align-items: center;
+			}
+
+			.et_pb_column {
+				&.text-col {
+					.text {
+						h3,.h3 {
+							color: $brown;
+						}
+
+						p {
+							color: $darkbrown;
+
+							@include mq(tablet-small,min) {
+								max-width: 80%;
+							}
+						}
+
+						.btn {
+							margin-top: 35px;
+						}
+					}
+				}
+
+				&.steps-col {
+					.steps-wrapper {
+						.process-steps {
+							width: 100%;
+							counter-reset: step-counter 0;
+							margin-top: 30px;
+
+							@include mq(tablet,min) {
+								width: 100%;
+								max-width: 355px;
+								margin: auto 0 auto auto;
+							}
+
+							.step {
+								counter-increment: step-counter 1;
+								padding-bottom: 50px;
+								display: grid;
+								grid-template-columns: 40px auto;
+								grid-column-gap: 12px;
+								position: relative;
+
+								&:before {
+									content: counter(step-counter);
+									font-family: $bfont;
+									font-size: 23px;
+									line-height: 1;
+									font-weight: $semi;
+									color: $brown;
+									@include size(40px,40px);
+									background: $cream;
+									border: 3px solid $brown;
+									border-radius: 100%;
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									margin-top: -12px;
+									position: relative;
+									z-index: 10;
+								}
+
+								&:not(:last-of-type) {
+									&:after {
+										content: '';
+										display: block;
+										height: 100%;
+										width: 3px;
+										background: $brown;
+										@include position(absolute, top 0 left 18px);
+									}
+								}
+
+								.inner {
+									.step-title {
+										font-family: $bfont;
+										font-size:  20px;
+										font-weight: $semi;
+										letter-spacing: 0.1em;
+										line-height: 1;
+										color: $brown;
+										text-transform: uppercase;
+										padding-bottom: 16px;
+									}
+
+									.step-description {
+										font-family: $hfontalt;
+										font-style: italic;
+										font-size: 16px;
+										color: $darkbrown;
+
+										@include mq(phone-wide,min) {
+											line-height: 1.4;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
