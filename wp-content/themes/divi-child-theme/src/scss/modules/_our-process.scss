@@ -58,7 +58,7 @@ body {
 									content: counter(step-counter);
 									font-family: $bfont;
 									font-size: 23px;
-									line-height: 1;
+									line-height: .7;
 									font-weight: $semi;
 									color: $brown;
 									@include size(40px,40px);

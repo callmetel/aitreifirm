@@ -3,6 +3,9 @@
 .banner {
 	&-internal {
 		padding: 130px 0;
+		@include mq(tablet,max) {
+			padding: 50px 0!important;
+		}
 
 		.page-title {
 			text-align: center;
@@ -55,10 +58,6 @@
 			background-position: top left;
 			background-size: cover;
 			position: relative;
-
-			@include mq(tablet,max) {
-				padding: 0;
-			}
 
 			&:before {
 				@include mq(tablet,min) {

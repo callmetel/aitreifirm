@@ -1,6 +1,6 @@
 // #Button-Styles
 
-.btn,input[type="submit"] {
+.btn {
   cursor: pointer;
   display: table;
   text-transform: uppercase;
@@ -24,6 +24,11 @@
   	padding: 12px 24px;
   }
 
+  &-sm {
+  	font-size: 14px;
+  	padding: 12px 24px;
+  }
+
 	&--inline {
 	  display: inline-table;
 
@@ -37,4 +42,39 @@
 		background: transparent;
 		color: $blue;
 	}
+
+  &-darkblue {
+    background: $darkblue;
+    border-color: $darkblue;
+
+    &:hover {
+      color: $darkblue;
+      border-color: $darkblue;
+    } 
+  }
+}
+
+input[type="submit"] {
+	cursor: pointer;
+  display: table;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+  font-family: $bfont;
+  font-weight: $med;
+  color: $white;
+  background: $blue;
+  padding: 14px 30px;
+  letter-spacing: .12em;
+  margin: 20px 0;
+  appearance: none;
+  box-shadow: none;
+  border: 2px solid $blue;
+  transition: all .25s ease-in-out;
+
+  @include mq(phone-wide,max) {
+  	font-size: 14px;
+  	padding: 12px 24px;
+  }
 }

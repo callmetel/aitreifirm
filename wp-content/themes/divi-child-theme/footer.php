@@ -37,7 +37,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 			    <div class="et_pb_column et_pb_column_2_5 et_pb_column_1 et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty"></div>
 			  </div>
 			  <div class="footer-info-rw et_pb_row stndrd-rw et_pb_row_1-2_1-4_1-4">
-			    <div class="et_pb_column et_pb_column_1_2 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough">
+			    <div class="footer-info-col footer-info-col-1 et_pb_column et_pb_column_1_2 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough">
 			      <div class="footer-logo et_pb_module et_pb_image">
 			        <span class="et_pb_image_wrap">
 			        	<img src="/wp-content/uploads/logo-inline-short.svg" alt="" title="logo-inline-short" />
@@ -51,13 +51,13 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 			      	<a href="https://youtube.com" class="icon"><img src="/wp-content/uploads/icon_youtube.svg" alt=""></a>
 			      </div>
 			    </div>
-			    <div class="et_pb_column et_pb_column_1_4 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough">
+			    <div class="footer-info-col footer-info-col-2 et_pb_column et_pb_column_1_4 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough">
 			      <div class="footer-menu-wrap footer-info et_pb_module et_pb_code">
 			      	<h4 class="footer-info-ttl">Links</h4>
 			      	<?php echo do_shortcode('[menu name="Footer Menu" id="footer-menu"]'); ?>
 			      </div>
 			    </div>
-			    <div class="et_pb_column et_pb_column_1_4 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
+			    <div class="footer-info-col footer-info-col-3 et_pb_column et_pb_column_1_4 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
 			      <div class="footer-info et_pb_module et_pb_code">
 			      	<h4 class="footer-info-ttl">Contact</h4>
 			      	<div class="address info">

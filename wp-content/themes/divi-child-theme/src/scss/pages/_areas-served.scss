@@ -2,7 +2,150 @@
 
 body {
 	&.page-template-page-template-areas_served {
+		#areas-served {
+			.areas-served-wrapper {
+				display: grid;
+				gap: 100px;
 
+				.area {
+					display:flex;
+					padding: 70px 0;
+					overflow: hidden;
+					position: relative;
+
+					&:nth-of-type(even) {
+						flex-direction: row-reverse;
+						background: $lighterblue;
+						padding-left: 8%;
+
+						&:before {
+							right: 0;
+						}
+
+						.city-image {
+							margin-left: 6%;
+							margin-right: 0;
+						}
+
+						.city-info {
+							margin: auto auto auto 0;
+
+							*:not(.btn) {
+								color: $darkblue;
+							}
+						}
+					}
+
+					&:nth-of-type(odd) {
+						flex-direction: row;
+						background: $cream;
+						padding-right: 8%;
+
+						&:before {
+							left: 0;
+						}
+
+						.city-image {
+							margin-left: 0;
+							margin-right: 6%;
+						}
+
+						.city-info {
+							margin: auto 0 auto auto;
+
+							*:not(.btn) {
+								color: $brown;
+							}
+						}
+					}
+
+					@include mq(tablet,max) {
+						flex-direction: column!important;
+						padding: 0 30px 50px!important;
+					}
+
+					&:before {
+						content: '';
+						display: block;
+						@include size(8%,100%);
+						background: $white;
+						position: absolute;
+						top: 0;
+
+						@include mq(tablet,max) {
+							@include size(100%,70px);
+							top: 0;
+						}
+					}
+
+					.area-content {
+						display: flex;
+						align-items: center;
+						justify-content: start;
+						flex-direction: column;
+						position: relative;
+						z-index: 10;
+						text-align: left;
+
+						&.city-image {
+							width: 100%;
+							@include mq(tablet,min) {
+								width: 52%;
+							}
+							@include mq(tablet,max) {
+								margin: 0 auto!important;
+								max-width: 350px;
+							}
+
+							img {
+								width: 100%;
+								display: block;
+							}
+						}
+
+						&.city-info {
+							width: 100%;
+							text-align: center;
+							@include mq(tablet,min) {
+								width: 42%;
+								text-align: left;
+							}
+							@include mq(tablet,max) {
+								margin-top: 50px;
+								justify-content: center;
+							}
+
+							.city-name {
+								@include mq(tablet,min) {
+									text-align: left;
+									margin-left: 0;
+									margin-right: auto;
+								}
+							}
+
+							.city-blurb {
+								font-size: 16px;
+								margin-top: 20px;
+								margin-bottom: 10px;
+
+								@include mq(tablet,min) {
+									width: 70%;
+									margin-left: 0;
+									margin-right: auto;
+								}
+							}
+
+							.city-link {
+								@include mq(tablet,min) {
+									margin-left: 0;
+									margin-right: auto;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 	&.page-template-page-template-areas_served_single {

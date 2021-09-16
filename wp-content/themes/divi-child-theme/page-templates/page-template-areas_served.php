@@ -55,25 +55,30 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<!-- End Subpage Banner -->
 
 				<!-- Subpage Content -->
-				<div class="sbpg-cntnt-sctn et_pb_section et_section_regular">
-					<div class="sbpg-cntnt-rw stndrd-rw et_pb_row et_pb_equal_columns">
-
-						<!-- Subpage Left Content -->
-						<div class="sbpg-cntnt-col sbpg-cntnt-col-1 et_pb_column et_pb_column_2_3">
-							<div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
-								<div class="et_pb_text_inner">
-									<?php the_content(); ?>
+				<div id="areas-served" class="areas-served-sctn et_pb_section sbpg-bnnr-sctn et_section_regular">
+					<div class="sm-rw et_pb_row">
+						<div class="areas-served-col et_pb_column et_pb_column_4_4">
+							<div class="areas-served-wrapper">
+								<div class="area area-sanfran">
+									<div class="city-image area-content"><img src="/wp-content/uploads/city-sanfran.jpg" alt=""></div>
+									<div class="city-info area-content">
+										<h4 class="city-name">San Francisco Bay&nbsp;Area</h4>
+										<p class="city-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+										<a href="/areas-served/san-francisco/" class="btn btn-sm city-link">Learn More</a>
+									</div>
+								</div>
+								<div class="area area-houston">
+									<div class="city-image area-content"><img src="/wp-content/uploads/city-houston.jpg" alt=""></div>
+									<div class="city-info area-content">
+										<h4 class="city-name">Greater Houston</h4>
+										<p class="city-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+										<a href="/areas-served/houston/" class="btn btn-sm city-link">Learn More</a>
+									</div>
 								</div>
 							</div>
 						</div> <!-- .et_pb_column -->
-
-						<!-- Subpage Right Sidebar -->
-						<div class="sbpg-cntnt-col sbpg-cntnt-col-1 et_pb_column et_pb_column_1_3">
-							<!-- Sidebar Divi Library Items -->
-							<?php echo do_shortcode('[et_pb_section global_module="25232"][/et_pb_section]');?>
-						</div> <!-- .et_pb_column -->
-					</div> <!-- .et_pb_row -->
-				</div>
+					</div>
+				</div> 
 			</div> <!-- .entry-content -->
 
 		<?php

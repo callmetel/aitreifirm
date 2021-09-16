@@ -80,11 +80,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							</div>
 						</div> <!-- .et_pb_column -->
 
-						<!-- Subpage Right Sidebar -->
+						<!-- Subpage Right Content -->
 						<div class="sbpg-cntnt-col sbpg-cntnt-col-2 et_pb_column et_pb_column_1_2">
 							<div class="sbpg-form et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
 								<div class="et_pb_text_inner">
-									<h4 class="form-title">Get Started Today</h4>
+									<h5 class="form-title">Get Started Today</h5>
 									<p class="form-indicator">*Required Fields</p>
 									<?php echo do_shortcode('[gravityform id="2" title="false" description="false" ajax="true" tabindex="1"]'); ?>
 								</div>

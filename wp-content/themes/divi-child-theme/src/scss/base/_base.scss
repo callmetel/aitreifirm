@@ -60,20 +60,6 @@ body {
     padding: 0!important;
   }
 
-  .et_pb_gutters4 .et_pb_column_1_2, 
-  .et_pb_gutters4.et_pb_row .et_pb_column_1_2 {
-    @include mq(tablet,min) {
-      width: 46%;
-    }
-  }
-
-  .et_pb_gutters4 .et_pb_column, 
-  .et_pb_gutters4.et_pb_row .et_pb_column {
-    @include mq(tablet,min) {
-      margin-right: 8%;
-    }
-  }
-
   #et-main-area {
     position: relative;
   }

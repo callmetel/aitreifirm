@@ -60,7 +60,8 @@ body {
 						letter-spacing: 0.12em;
 					}
 
-					&.current-menu-item {
+					&.current-menu-item,
+					&.current-page-ancestor {
 						.menu-image-title {
 							position: relative;
 
