@@ -60,6 +60,13 @@ body {
     padding: 0!important;
   }
 
+  .small-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 700px;
+  }
+
   #et-main-area {
     position: relative;
   }

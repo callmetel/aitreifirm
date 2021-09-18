@@ -2193,7 +2193,7 @@ class ET_Core_Portability {
 	public function get_timestamp() {
 		et_core_nonce_verified_previously();
 
-		return isset( $_POST['timestamp'] ) && ! empty( $_POST['timestamp'] ) ? sanitize_text_field( $_POST['timestamp'] ) : current_time( 'timestamp' );
+		return isset( $_POST['timestamp'] ) && ! empty( $_POST['timestamp'] ) ? sanitize_text_field( $_POST['timestamp'] ) : (string) current_time( 'timestamp' ); // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp.Requested -- This is used to generate the temporary file ID so we don't need the accuracy.
 	}
 
 	/**

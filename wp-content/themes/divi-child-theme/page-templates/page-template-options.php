@@ -126,7 +126,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<div class="call-to-action-col et_pb_column et_pb_column_4_4">
 							<div class="call-to-action et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
 								<div class="et_pb_text_inner">
-									<p class="call-to-action-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+									<p class="call-to-action-text small-container">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
 									<a href="#" class="call-to-action-btn btn btn-darkblue align-center">Learn More</a>
 								</div>
 							</div>

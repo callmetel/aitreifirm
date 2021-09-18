@@ -73,3 +73,9 @@ if ( defined( 'AUTOPTIMIZE_PLUGIN_VERSION' ) ) {
 		}
 	}
 }
+
+if ( defined( 'OP3_VERSION' ) ) {
+	// Disable JQuery Body when some OptimizePress is active
+	// because the two aren't compatible.
+	et_builder_disable_jquery_body();
+}

@@ -98,6 +98,50 @@ h5,.h5 {
   line-height: 1.48;
 }
 
+.et_pb_column h1,.et_pb_column .h1 {
+  font-size: 100px;
+  line-height: 1;
+  padding-bottom: 50px;
+
+  @include mq(tablet-small,max) {
+    font-size: 90px;
+  }
+
+  @include mq(phone-wide,max) {
+    font-size: 70px;
+  }
+}
+
+.et_pb_column h2,.et_pb_column .h2 {
+  font-size: 84px;
+  line-height: 1;
+  padding-bottom: 40px;
+
+  @include mq(phone-wide,max) {
+    font-size: 65px;
+  }
+}
+
+.et_pb_column h3,.et_pb_column .h3 {
+  font-size: 62px;
+  line-height: 1.16;
+  padding-bottom: 20px;
+
+  @include mq(phone-wide,max) {
+    font-size: 52px;
+  }
+}
+
+.et_pb_column h4,.et_pb_column .h4 {
+  font-size: 40px;
+  line-height: 1.13;
+}
+
+.et_pb_column h5,.et_pb_column .h5 {
+  font-size: 34px;
+  line-height: 1.48;
+}
+
 .sbpg-cntnt-ttl {
   font-family: $bfont;
   font-style: normal;
@@ -122,6 +166,15 @@ h5,.h5 {
 .ttl {
 }
 
+.section-title {
+  background: $blue;
+  padding: 25px;
+  width: 100%;
+  max-width: 540px;
+  display: block;
+  text-align: center;
+}
+
 html,body,p,li,div,input {
   font-family: $bfont;
   font-weight: 400;
@@ -132,9 +185,11 @@ p {
   font-size: 18px;
   font-style: italic;
   line-height: 1.8;
+  padding-bottom: 30px;
 
   @include mq(phone-wide,max) {
     font-size: 16px;
+    padding-bottom: 24px;
   }
 }
 

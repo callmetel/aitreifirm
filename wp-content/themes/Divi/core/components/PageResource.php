@@ -914,9 +914,8 @@ class ET_Core_PageResource {
 			(array) glob( "{$cache_dir}/*/et-{$_owner}-{$_slug}-*tb-{$_post_id}*" ),
 			(array) glob( "{$cache_dir}/*/et-{$_owner}-{$_slug}-*tb-for-{$_post_id}*" ),
 			// Remove Dynamic CSS files for categories, tags, authors, archives, homepage post feed and search results.
-			(array) glob( "{$cache_dir}/category/*/et-{$_owner}-dynamic*" ),
+			(array) glob( "{$cache_dir}/taxonomy/*/et-{$_owner}-dynamic*" ),
 			(array) glob( "{$cache_dir}/author/*/et-{$_owner}-dynamic*" ),
-			(array) glob( "{$cache_dir}/post_tag/et-{$_owner}-dynamic*" ),
 			(array) glob( "{$cache_dir}/archive/et-{$_owner}-dynamic*" ),
 			(array) glob( "{$cache_dir}/search/et-{$_owner}-dynamic*" ),
 			(array) glob( "{$cache_dir}/notfound/et-{$_owner}-dynamic*" ),

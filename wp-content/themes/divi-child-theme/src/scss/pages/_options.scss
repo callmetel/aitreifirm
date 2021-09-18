@@ -156,8 +156,6 @@
 				line-height: 1.24;
 				margin: 0 auto;
 				margin-bottom: 60px;
-				width: 100%;
-				max-width: 700px;
 
 				@include mq(phone-wide,max) {
 					font-size: 28px;
