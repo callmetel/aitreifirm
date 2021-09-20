@@ -83,6 +83,12 @@
 						display: block;
 						max-width: 300px;
     				width: 100%;
+    				margin-left: 0;
+    				margin-right: auto;
+
+    				img {
+    					width: 100%;
+    				}
 					}
 
 					.social-icons {
