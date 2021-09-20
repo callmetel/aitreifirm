@@ -216,7 +216,7 @@
 			<?php
 				$logo = ( $user_logo = et_get_option( 'divi_logo' ) ) && '' != $user_logo
 					? $user_logo
-					: '/wp-content/uploads/logo-inline-short.svg';
+					: site_url('/wp-content/uploads/logo-inline-short.svg');
 			?>
 				<div class="logo_container">
 					<span class="logo_helper"></span>
