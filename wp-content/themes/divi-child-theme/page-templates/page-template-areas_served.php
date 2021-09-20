@@ -60,7 +60,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<div class="areas-served-col et_pb_column et_pb_column_4_4">
 							<div class="areas-served-wrapper">
 								<div class="area area-sanfran">
-									<div class="city-image area-content"><img src="/wp-content/uploads/city-sanfran.jpg" alt=""></div>
+									<div class="city-image area-content"><img src="<?php echo site_url('/wp-content/uploads/city-sanfran.jpg');?>" alt=""></div>
 									<div class="city-info area-content">
 										<h4 class="city-name">San Francisco Bay&nbsp;Area</h4>
 										<p class="city-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
@@ -68,7 +68,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 									</div>
 								</div>
 								<div class="area area-houston">
-									<div class="city-image area-content"><img src="/wp-content/uploads/city-houston.jpg" alt=""></div>
+									<div class="city-image area-content"><img src="<?php echo site_url('/wp-content/uploads/city-houston.jpg');?>" alt=""></div>
 									<div class="city-info area-content">
 										<h4 class="city-name">Greater Houston</h4>
 										<p class="city-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>

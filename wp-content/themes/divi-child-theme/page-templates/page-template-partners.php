@@ -73,7 +73,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<div class="sbpg-cntnt-col et_pb_column et_pb_column_4_4">
 							<div class="image-title et_pb_text et_pb_module et_pb_bg_layout_dark et_pb_text_align_center">
 								<div class="et_pb_text_inner">
-									<img class="partners-image" src="/wp-content/uploads/PreciousDreamsFoundationCollage-compressed.png" alt="Precious Dreams Foundation" />
+									<img class="partners-image" src="<?php echo site_url('/wp-content/uploads/PreciousDreamsFoundationCollage-compressed.png');?>" alt="Precious Dreams Foundation" />
 									<h2 class="h3 section-title">Partners</h2>
 								</div>
 							</div>

@@ -20,37 +20,37 @@
             <div class="chart-cell title-cell title-cell-other">Listing Your Property</div>
             <div class="chart-cell title-cell title-cell-ait">Selling to AIT</div>
             <div class="chart-cell icon-cell">
-              <img class="chart-icon" src="/wp-content/uploads/icon-commission.svg" alt="">
+              <img class="chart-icon" src="<?php echo site_url('/wp-content/uploads/icon-commission.svg');?>" alt="">
               <span class="name">Commission</span>
             </div>
             <div class="chart-cell chart-cell-other">3-6% paid by Seller</div>
             <div class="chart-cell chart-cell-ait">$0</div>
             <div class="chart-cell icon-cell">
-              <img class="chart-icon" src="/wp-content/uploads/icon-closingcost.svg" alt="">
+              <img class="chart-icon" src="<?php echo site_url('/wp-content/uploads/icon-closingcost.svg');?>" alt="">
               <span class="name">Closing Cost</span>
             </div>
             <div class="chart-cell chart-cell-other">1.5-2% on average</div>
             <div class="chart-cell chart-cell-ait">$0</div>
             <div class="chart-cell icon-cell">
-              <img class="chart-icon" src="/wp-content/uploads/icon-contingencies.svg" alt="">
+              <img class="chart-icon" src="<?php echo site_url('/wp-content/uploads/icon-contingencies.svg');?>" alt="">
               <span class="name">Contingencies</span>
             </div>
             <div class="chart-cell chart-cell-other">Possible</div>
             <div class="chart-cell chart-cell-ait">None</div>
             <div class="chart-cell icon-cell">
-              <img class="chart-icon" src="/wp-content/uploads/icon-showings.svg" alt="">
+              <img class="chart-icon" src="<?php echo site_url('/wp-content/uploads/icon-showings.svg');?>" alt="">
               <span class="name">Showings</span>
             </div>
             <div class="chart-cell chart-cell-other">Multiple</div>
             <div class="chart-cell chart-cell-ait">One</div>
             <div class="chart-cell icon-cell">
-              <img class="chart-icon" src="/wp-content/uploads/icon-repairs.svg" alt="">
+              <img class="chart-icon" src="<?php echo site_url('/wp-content/uploads/icon-repairs.svg');?>" alt="">
               <span class="name">Repair Cost</span>
             </div>
             <div class="chart-cell chart-cell-other">Varies</div>
             <div class="chart-cell chart-cell-ait">Covered by Us</div>
             <div class="chart-cell icon-cell">
-              <img class="chart-icon" src="/wp-content/uploads/icon-closingdate.svg" alt="">
+              <img class="chart-icon" src="<?php echo site_url('/wp-content/uploads/icon-closingdate.svg');?>" alt="">
               <span class="name">Closing Date</span>
             </div>
             <div class="chart-cell chart-cell-other">1-2 Months</div>

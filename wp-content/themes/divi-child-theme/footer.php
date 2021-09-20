@@ -40,15 +40,15 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 			    <div class="footer-info-col footer-info-col-1 et_pb_column et_pb_column_1_2 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough">
 			      <div class="footer-logo et_pb_module et_pb_image">
 			        <span class="et_pb_image_wrap">
-			        	<img src="/wp-content/uploads/logo-inline-short.svg" alt="" title="logo-inline-short" />
+			        	<img src="<?php echo site_url('/wp-content/uploads/logo-inline-short.svg');?>" alt="" title="logo-inline-short" />
 			        </span>
 			      </div>
 			      <div class="social-icons">
-			      	<a href="https://instagram.com" class="icon"><img src="/wp-content/uploads/icon_instagram.svg" alt=""></a>
-			      	<a href="https://facebook.com" class="icon"><img src="/wp-content/uploads/icon_facebook.svg" alt=""></a>
-			      	<a href="https://linkedin.com" class="icon"><img src="/wp-content/uploads/icon_linkedin.svg" alt=""></a>
-			      	<a href="https://twitter.com" class="icon"><img src="/wp-content/uploads/icon_twitter.svg" alt=""></a>
-			      	<a href="https://youtube.com" class="icon"><img src="/wp-content/uploads/icon_youtube.svg" alt=""></a>
+			      	<a href="https://instagram.com" class="icon"><img src="<?php echo site_url('/wp-content/uploads/icon_instagram.svg');?>" alt=""></a>
+			      	<a href="https://facebook.com" class="icon"><img src="<?php echo site_url('/wp-content/uploads/icon_facebook.svg');?>" alt=""></a>
+			      	<a href="https://linkedin.com" class="icon"><img src="<?php echo site_url('/wp-content/uploads/icon_linkedin.svg');?>" alt=""></a>
+			      	<a href="https://twitter.com" class="icon"><img src="<?php echo site_url('/wp-content/uploads/icon_twitter.svg');?>" alt=""></a>
+			      	<a href="https://youtube.com" class="icon"><img src="<?php echo site_url('/wp-content/uploads/icon_youtube.svg');?>" alt=""></a>
 			      </div>
 			    </div>
 			    <div class="footer-info-col footer-info-col-2 et_pb_column et_pb_column_1_4 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough">
