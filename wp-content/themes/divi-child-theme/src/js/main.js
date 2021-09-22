@@ -39,27 +39,27 @@ jQuery(document).ready(function ($) {
       }
     });
     
-    $('a').each(function(){
-      if($('body').hasClass('home') && !$(this).isExternal()) {
-        $(this).attr({
-          rel: 'dofollow'
-        });
-      }
-      else if($('body').hasClass('home') && $(this).isExternal()) {
-        $(this).attr({
-          rel: 'nofollow noreferrer',
-          target: '_blank'
-        });
-      }
-      else {
-        if($(this).isExternal()) {
-          $(this).attr({
-            rel: 'nofollow noreferrer',
-            target: '_blank'
-          });
-        }
-      }
-    });
+    // $('a').each(function(){
+    //   if($('body').hasClass('home') && !$(this).isExternal()) {
+    //     $(this).attr({
+    //       rel: 'dofollow'
+    //     });
+    //   }
+    //   else if($('body').hasClass('home') && $(this).isExternal()) {
+    //     $(this).attr({
+    //       rel: 'nofollow noreferrer',
+    //       target: '_blank'
+    //     });
+    //   }
+    //   else {
+    //     if($(this).isExternal()) {
+    //       $(this).attr({
+    //         rel: 'nofollow noreferrer',
+    //         target: '_blank'
+    //       });
+    //     }
+    //   }
+    // });
 
     if ( $("#mobile_menu").parents(".mobile_nav").length == 1 ) { 
       console.log('already has mobile menu');
@@ -78,22 +78,6 @@ jQuery(document).ready(function ($) {
       $('#mobile_menu').slideToggle(600);
     };
   });
-
-  $(window).on('resize', function(){
-
-    /****************************************/ 
-    /*** Reposition Call Banner on Mobile
-    /****************************************/ 
-
-    if($(window).width() < 981 && $(".call-today").closest("#et-top-navigation").length>0) {
-      $('#main-header').prepend($('.call-today'));
-      changeClicktoCall();
-    } 
-    else if($(window).width() > 980 && $(".call-today").closest("#main-header").length>0) {
-      $('#et-top-navigation').prepend($('.call-today'));
-      changeClicktoCall();
-    }
-  }).resize();
 
   $(window).on('load', function(){
 
@@ -152,27 +136,6 @@ jQuery(document).ready(function ($) {
     }, 700);
   });
 
-  function changeClicktoCall() {
-    /****************************************/ 
-    /*** Reposition Call Banner on Mobile
-    /****************************************/ 
-
-    if($(window).width() < 981) {
-      $('.click-to-call').each(function(){
-        var $PhoneHref = $('.phone-number').attr('href');
-        $(this).attr('href', $PhoneHref);
-      });
-    } 
-    else if($(window).width() > 980) {
-      var headerHeight = $('#main-header').height();
-      $('#page-container').css('padding-top', headerHeight);
-      $('.click-to-call').each(function(){
-        var desktopLink = $(this).attr('data-href');
-        $(this).attr('href', desktopLink);
-      });
-    }
-  }
-
   $(window).scroll(function(){
     var ScrollTop = parseInt($(window).scrollTop());
     console.log(ScrollTop);
@@ -184,4 +147,32 @@ jQuery(document).ready(function ($) {
       $('#main-header').removeClass('et-fixed-header');
     }
   }).scroll();
+
+  $('.lightbox-trigger').click(function(e){
+    e.preventDefault();
+    openLightbox($(this));
+  });
+
+  $('.lightbox-close').click(function(e){
+    e.preventDefault();
+    closeLightbox();
+  });
+
+  function openLightbox(trigger) {
+    var link = trigger.attr('data-embed-id');
+
+    $('#lightbox .inner').empty().html('<iframe id="lightbox-video" src="https://www.youtube.com/embed/'+link+'/?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay="1"></iframe>');
+    $('#lightbox').addClass('active');
+    $('body').addClass('lightbox-active');
+  }
+
+  function closeLightbox() {
+    $('#lightbox').removeClass('active').addClass('closing');
+    $('body').removeClass('lightbox-active');
+    $('#lightbox .inner').empty();
+
+    setTimeout(function(){
+      $('#lightbox').removeClass('closing');
+    },250);
+  }
 });

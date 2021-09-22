@@ -43,15 +43,37 @@ body {
 	&.page-template-page-template-about {
 		#our-mission {
 			background: $blue;
+			position: relative;
 
-			.text-col {
-				.text {
-					* {
-						color: $white;
-					}
+			&:before {
+				content: '';
+				display: block;
+				@include position(absolute, top -79.8px left 0);
+				@include size(100%, 80px);
+				background: $blue;
+				z-index: 1;
+				clip-path: polygon(100% 0, 0% 100%, 100% 100%);
 
-					.btn {
-						background: $tan;
+				@include mq(tablet-wide,min) {
+					top: calc(-12vw + 1px);
+					height: 12vw;
+					min-height: 142px;
+				}
+			}
+
+			.et_pb_row {
+				position: relative;
+				z-index: 10;
+
+				.text-col {
+					.text {
+						* {
+							color: $white;
+						}
+
+						.btn {
+							background: $tan;
+						}
 					}
 				}
 			}

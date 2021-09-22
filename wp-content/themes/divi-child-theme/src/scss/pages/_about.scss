@@ -10,4 +10,148 @@
 			color: $white;
 		}
 	}
+
+	#our-story {
+		@include mq(tablet,max) {
+			padding: 0!important;
+		}
+
+		.content {
+			@include mq(tablet,min) {
+				margin-top: 50px;
+			}
+
+			.blurb {
+				display: block;
+				width: 100%;
+				margin-bottom: 50px;
+
+				@include mq(tablet,min) {
+					max-width: 345px;
+					margin-bottom: 120px;
+					text-align: left;
+				}
+
+				.founded {
+					display: block;
+					font-size: 12px;
+					letter-spacing: 0.14em;
+					text-transform: uppercase;
+					padding-bottom: 15px;
+				}
+			}
+
+			.paragraph {
+				@include mq(tablet,min) {
+					margin-top: 150px;
+					width: 100%;
+					max-width: 400px;
+					margin-right: auto;
+					text-align: left;
+				}
+
+				.sm-ttl {
+					@include mq(tablet,max) {
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+
+	#who-we-are {
+		position: relative;
+		padding-bottom: 0!important;
+
+		.sbpg-cntnt-rw {
+			position: relative;
+			z-index: 10;
+
+			.sbpg-cntnt-col {
+				position: relative;
+				padding: 100px 0;
+
+				@include mq(tablet,max) {
+					padding-top: 50px;
+				}
+
+				.video-title {
+					@include mq(tablet,min) {
+						@include position(absolute, top 0 left 0);
+						z-index: 20;
+					}
+
+					.h2 {
+						text-align: left;
+
+						@include mq(tablet,max) {
+							text-align: center;
+						}
+
+						&:after {
+							content: '';
+							display: block;
+							background: $tan;
+							@include size(120px,8px);
+							margin: 50px auto 0 0;
+							padding-bottom: 0;
+
+							@include mq(tablet,max) {
+								margin: 30px auto 0;
+							}
+						}
+
+						br {
+							@include mq(tablet,max) {
+								display: none;
+							}
+						}
+					}
+				}
+
+				.video-trigger {
+					position: relative;
+					display: table;
+					margin: 0 auto;
+					line-height: 1;
+					z-index: 1;
+
+					.overlay {
+						display: block;
+						@include size(100%,100%);
+						background: transparentize($black, .85);
+						@include position(absolute, top 0 left 0);
+						z-index: 10;
+
+						&:before {
+							content:'';
+							display: block;
+							@include size(30px,35px);
+							background-image: url('#{$path-uploads}/play.svg');
+							background-size: contain;
+							background-position: center;
+							@include position(absolute, top 50% left 50%);
+							transform: translate(-50%,-50%);
+							z-index: 15;
+						}
+					}
+
+					img {
+						display: block;
+					}
+				}
+			}
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			@include position(absolute, bottom -1px left 0);
+			@include size(100%, 12vw);
+			min-height: 142px;
+			background: $tan;
+			z-index: 1;
+			clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+		}
+	}
 }

@@ -44,6 +44,11 @@ body {
 	&.page-template-page-template-about {
 		#lead-form {
 			background: $tan;
+			padding: 85px 0 calc(12vw + 125px);
+			@include mq(tablet-wide,min) {
+				padding-top: 125px;
+			}
+
 			.sm-rw {
 				.et_pb_column {
 					width: 100%!important;
