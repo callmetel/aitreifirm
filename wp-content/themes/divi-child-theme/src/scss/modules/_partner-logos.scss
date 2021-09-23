@@ -1,0 +1,52 @@
+#partner-logos {
+	background: $blue;
+	padding: 10px 0!important;
+
+	.stndrd-rw {
+		display: flex;
+		align-items: center;
+
+		@include mq(tablet,max) {
+			flex-direction: column;
+		}
+
+		.partner-logos-title-wrap {
+			.partner-logos-title {
+				color: $white;
+				font-size: 22px;
+				line-height: 1;
+
+				@include mq(tablet,max) {
+					text-align: center;
+					padding: 14px 0 4px;
+				}
+
+				@include mq(phone-wide,max) {
+					font-size: 18px;
+
+				}
+			}
+		}
+
+		.partner-logos {
+			.et_pb_code_inner {
+				display: flex;
+				flex-direction: row;
+				align-items: flex-end;
+
+				.logo {
+					margin: auto;
+					padding: 14px 10px;
+
+					&:last-of-type {
+						margin-right: 0;
+					}
+
+					img {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
