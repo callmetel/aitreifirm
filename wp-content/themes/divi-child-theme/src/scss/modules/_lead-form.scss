@@ -41,13 +41,10 @@ body {
 		}
 	}
 
-	&.page-template-page-template-about {
+	&.alt-lead-form {
 		#lead-form {
 			background: $tan;
-			padding: 85px 0 calc(12vw + 125px);
-			@include mq(tablet-wide,min) {
-				padding-top: 125px;
-			}
+			padding: 85px 0;
 
 			.sm-rw {
 				.et_pb_column {
@@ -103,6 +100,15 @@ body {
 						}
 					}
 				}
+			}
+		}
+	}
+
+	&.page-template-page-template-about {
+		#lead-form {
+			padding: 85px 0 calc(12vw + 125px);
+			@include mq(tablet-wide,min) {
+				padding-top: 125px;
 			}
 		}
 	}

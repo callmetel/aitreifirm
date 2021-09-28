@@ -3,7 +3,7 @@
 Template Name: About Us Page
 */
 
-get_header();
+get_header('alt_leadform');
 
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
@@ -38,14 +38,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 			<div class="entry-content">
 
 				<!-- Subpage Banner -->
-				<?php 
-					// Get Featured Image 
-
-				    if ( has_post_thumbnail( $post->ID ) ) :
-				        $imageInfo = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-				        $imageUrl = $imageInfo[0];
-				    endif;
-				  ?>
 
 				<div id="banner" class="banner banner-internal et_pb_section sbpg-bnnr-sctn et_section_regular">
 					<div class="sbpg-bnnr-rw stndrd-rw et_pb_row">
@@ -54,7 +46,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								<div class="et_pb_text_inner">
 									<h1 class="page-title">
 										<span class="sub-title"><?php the_title(); ?></span>
-										<span class="main-title">Who We Are</span>
+										<span class="main-title"><?php the_field('title'); ?></span>
 									</h1>	
 								</div>
 							</div> <!-- .et_pb_text -->
@@ -70,8 +62,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							<div class="content et_pb_text et_pb_module et_pb_bg_layout_dark et_pb_text_align_center">
 								<div class="et_pb_text_inner">
 									<div class="blurb">
-										<span class="founded">Founded in San Francisco, CA</span>
-										<h4>AIT Real Estate Investment Firm provides the opportunity to&nbsp;win.</h4>
+										<span class="founded">Founded in <?php the_field('founded_in'); ?></span>
+										<h4><?php the_field('founded_pull_quote'); ?></h4>
 									</div>
 								</div>
 							</div>
@@ -81,7 +73,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								<div class="et_pb_text_inner">
 									<div class="paragraph">
 										<h5 class="sm-ttl">Our Story</h5>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
+										<?php the_field('our_story_content'); ?>
 									</div>
 								</div>
 							</div>
@@ -96,9 +88,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 									<div class="video-title">
 										<h4 class="h2">Who <br>Are <br>These <br>Guys?</h4>
 									</div>
-									<a href="#" data-embed-id="cnB8Ryfz0wM" class="lightbox-trigger video-trigger">
+									<a href="#" data-embed-id="<?php the_field('youtube_video_id'); ?>" class="lightbox-trigger video-trigger">
 										<span class="overlay"></span>
-										<img src="<?php echo site_url('/wp-content/uploads/who_we_are_video.jpg'); ?>" alt="" class="video-placeholder">
+										<img src="<?php the_field('video_placeholder'); ?>" alt="" class="video-placeholder">
 									</a>
 								</div>
 							</div>

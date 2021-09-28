@@ -14,7 +14,6 @@ body {
 				display: block;
 				@include size(90%,54vw);
 				max-height: 600px;
-				background-image: url('#{$path-uploads}/pexels-rodnae-productions-6646816.jpeg');
 				background-size: cover;
 				background-position: center;
 				margin-top: -150px;

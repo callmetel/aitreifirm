@@ -253,4 +253,54 @@ function dequeue_woocommerce_styles_scripts() {
 		}
 	}
 }
+
+// Add Global Options for ACF Field
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init() {
+
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+
+        // Register options page.
+        acf_add_options_page(array(
+            'page_title'    => __('Theme General Settings'),
+            'menu_title'    => __('Theme Settings'),
+            'menu_slug'     => 'theme-general-settings',
+            'redirect'      => true,
+            'icon_url' 			=> 'dashicons-feedback'
+        ));
+
+        // Header Settings
+        acf_add_options_page(array(
+            'page_title'  => __('Header Settings'),
+            'menu_title'  => __('Header Settings'),
+            'parent_slug' => 'theme-general-settings',
+            'autoload'			=> true,
+        ));
+
+        // Global Sections Settings
+        acf_add_options_page(array(
+            'page_title'  => __('Global Sections Settings'),
+            'menu_title'  => __('Global Sections Settings'),
+            'parent_slug' => 'theme-general-settings',
+            'autoload'			=> true,
+        ));
+
+        // Prefooter Settings
+        acf_add_options_page(array(
+            'page_title'  => __('Prefooter Settings'),
+            'menu_title'  => __('Prefooter Settings'),
+            'parent_slug' => 'theme-general-settings',
+            'autoload'			=> true,
+        ));
+
+        // Footer Settings
+        acf_add_options_page(array(
+            'page_title'  => __('Footer Settings'),
+            'menu_title'  => __('Footer Settings'),
+            'parent_slug' => 'theme-general-settings',
+            'autoload'			=> true,
+        ));
+    }
+}
 ?>

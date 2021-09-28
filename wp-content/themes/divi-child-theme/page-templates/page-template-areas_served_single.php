@@ -38,14 +38,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 			<div class="entry-content">
 
 				<!-- Subpage Banner -->
-				<?php 
-					// Banner Image 
-					$imageUrl = '/wp-content/uploads/sanfran-city-cropped.jpg';
-			  ?>
 				<style>
 					@media only screen and (min-width: 981px) {
 						.banner-internal-img {
-							background-image: url('<?php echo $imageUrl; ?>');
+							background-image: url("<?php the_field('banner_image'); ?>");
 						}
 					}
 				</style>
@@ -74,8 +70,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<div class="sbpg-cntnt-col sbpg-cntnt-col-1 et_pb_column et_pb_column_1_2">
 							<div class="sbpg-cntnt et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
 								<div class="et_pb_text_inner">
-									<h2 class="sbpg-cntnt-ttl">Lorem Ipsum</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque </p>
+									<h2 class="sbpg-cntnt-ttl"><?php the_field('content_title'); ?></h2>
+									<div class="content"><?php the_field('content_paragraphs'); ?></div>
 								</div>
 							</div>
 						</div> <!-- .et_pb_column -->

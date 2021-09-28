@@ -1,0 +1,30 @@
+// #Blog-Styles
+
+#blog-posts {
+	article {
+		&:not(:last-of-type) {
+			border-bottom: 1px solid $tan;
+			padding-bottom: 60px;
+		}
+
+		.entry-title {
+			color: $darkblue;
+			padding-bottom: 0;
+		}
+
+		.blog-content {
+			.post-meta {
+				padding-bottom: 0!important;
+				color: $tan;
+
+				a {
+					color: $tan;
+				}
+			}
+
+			.excerpt {
+				color: $darkblue;
+			}
+		}
+	}
+}

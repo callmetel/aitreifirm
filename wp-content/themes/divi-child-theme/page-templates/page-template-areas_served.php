@@ -45,7 +45,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								<div class="et_pb_text_inner">
 									<h1 class="page-title">
 										<span class="sub-title"><?php the_title(); ?></span>
-										<span class="main-title">Where We Are</span>
+										<span class="main-title"><?php the_field('title'); ?></span>
 									</h1>	
 								</div>
 							</div> <!-- .et_pb_text -->
@@ -59,23 +59,29 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<div class="sm-rw et_pb_row">
 						<div class="areas-served-col et_pb_column et_pb_column_4_4">
 							<div class="areas-served-wrapper">
-								<div class="area area-sanfran">
-									<div class="city-image area-content"><img src="<?php echo site_url('/wp-content/uploads/city-sanfran.jpg');?>" alt=""></div>
-									<div class="city-info area-content">
-										<h4 class="city-name">San Francisco Bay&nbsp;Area</h4>
-										<p class="city-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-										<a href="/areas-served/san-francisco/" class="btn btn-sm city-link">Learn More</a>
-									</div>
+								<?php 
+								if( have_rows('cities') ):
+	    						while( have_rows('cities') ): the_row(); 
+
+	    								// Variables
+	    								$image = get_sub_field('city_image');
+	    								$name = get_sub_field('city_name');
+	    								$area_class = strtolower(preg_replace("/[^a-zA-Z]+/", "", $name));
+	    								$blurb = get_sub_field('city_paragraph');
+	    								$link = get_sub_field('city_link');
+	    							?>
+										<div class="area area-<?php echo $area_class; ?>">
+											<div class="city-image area-content"><img src="<?php echo $image;?>" alt=""></div>
+											<div class="city-info area-content">
+												<h4 class="city-name"><?php echo $name; ?></h4>
+												<div class="city-blurb"><?php echo $blurb; ?></div>
+												<a href="<?php echo $link; ?>" class="btn btn-sm city-link">Learn More</a>
+											</div>
+										</div>
+								<?php 
+									endwhile;
+								endif; ?>
 								</div>
-								<div class="area area-houston">
-									<div class="city-image area-content"><img src="<?php echo site_url('/wp-content/uploads/city-houston.jpg');?>" alt=""></div>
-									<div class="city-info area-content">
-										<h4 class="city-name">Greater Houston</h4>
-										<p class="city-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-										<a href="/areas-served/houston/" class="btn btn-sm city-link">Learn More</a>
-									</div>
-								</div>
-							</div>
 						</div> <!-- .et_pb_column -->
 					</div>
 				</div> 

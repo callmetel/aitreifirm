@@ -6,6 +6,9 @@ body {
 			.areas-served-wrapper {
 				display: grid;
 				gap: 100px;
+				max-width: 900px;
+				width: 100%;
+				margin: 0 auto;
 
 				.area {
 					display:flex;
@@ -127,9 +130,9 @@ body {
 								font-size: 16px;
 								margin-top: 20px;
 								margin-bottom: 10px;
+								width: 90%;
 
 								@include mq(tablet,min) {
-									width: 70%;
 									margin-left: 0;
 									margin-right: auto;
 								}

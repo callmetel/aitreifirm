@@ -46,7 +46,7 @@
   $header_menu = get_field('header_menu_name','options');
 ?>
 
-<body <?php body_class(array('page-'.$post_slug, 'parent-page-'.$parent_slug, 'cat-'.$category)); ?>>
+<body <?php body_class(array('page-'.$post_slug, 'parent-page-'.$parent_slug, 'cat-'.$category,'alt-lead-form')); ?>>
 	<div id="page-container" style="padding-top:100px;">
 <?php
 	if ( is_page_template( 'page-template-blank.php' ) ) {

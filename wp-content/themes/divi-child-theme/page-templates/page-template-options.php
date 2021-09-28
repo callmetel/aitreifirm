@@ -45,7 +45,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								<div class="et_pb_text_inner">
 									<h1 class="page-title">
 										<span class="sub-title"><?php the_title(); ?></span>
-										<span class="main-title">What We Offer</span>
+										<span class="main-title"><?php the_field('title'); ?></span>
 									</h1>	
 								</div>
 							</div> <!-- .et_pb_text -->
@@ -60,59 +60,30 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<div class="sbpg-cntnt-col et_pb_column et_pb_column_4_4">
 							<div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
 								<div class="et_pb_text_inner">
-									<p class="align-center options-description">We have multiple creative strategies & a referral system that fits every situation's shoe size. Whether you’d like to maintain ownership & take a break from your financial obligation to your asset using a Lease Option agreement or you're ready to cash it in & sell it to use Off Market. Together we will walk through a qualifying process to guide you to the right decision.</p>
+									<div class="align-center options-description"><?php the_field('intro_paragraph'); ?></div>
 									<div id="options-grid">
+										<?php 
+										if( have_rows('options_grid') ):
+			    						while( have_rows('options_grid') ): the_row(); 
+
+		    								$title = ucwords(get_sub_field('option_title'));
+		    								$description = get_sub_field('option_description');
+		    						?>
 									  <div class="options-grid-item">
 									    <div class="flip-card-inner">
 									      <div class="flip-card flip-card-front">
-									        <h3 class="title">Off Market</h3>
+									        <h3 class="title"><?php echo $title; ?></h3>
 									      </div>
 									      <div class="flip-card flip-card-back">
 									      	<div class="text_flip_card">
-									      		<p>Selling off market is ideal if you need to sell fast & your home needs a major repair or two that doesn’t fit into your budget. Whether it’s a home that you inherited or an Invest asset that has become a costly liability. We buy houses as is, rehab them to either hold & rent or sell to families looking to move in the neighborhood.</p>
-									      		<p>Since we buy as is, there’s no need to clean, repair or stage, the only time you’ll have to show the house is with us for a general walk through.</p>
+									      		<?php echo $description; ?>
 									      	</div>
 									      </div>
 									    </div>
 									  </div>
-									  <div class="options-grid-item">
-									    <div class="flip-card-inner">
-									      <div class="flip-card flip-card-front">
-									        <h3 class="title">Lease Options</h3>
-									      </div>
-									      <div class="flip-card flip-card-back">
-									        <div class="text_flip_card">
-									      		<p>You may have obligations that call for more of your time & performing the task as a landlord is just too tedious. A property management company may not be the best fit & selling now isn’t what you want to do.</p>
-									      		<p>Lease options still allows you to collect passive income with the option to sell in 3-5 years or in the agreed time frame. Continue building equity while not having to forfeit cash flow.</p>
-									      	</div>
-									      </div>
-									    </div>
-									  </div>
-									  <div class="options-grid-item">
-									    <div class="flip-card-inner">
-									      <div class="flip-card flip-card-front">
-									        <h3 class="title">Subject To</h3>
-									      </div>
-									      <div class="flip-card flip-card-back">
-									      	<div class="text_flip_card">
-									      		<p>Similar to a lease option, this option relieves homeowners that are still obligated to a mortgage. Just like a lease option, it’s all in the name. We’ll take over your pre-existing mortgage subject to it’s terms, let us know your desired exit strategy & we’ll structure an agreement that’s a mutual win.</p>
-									      	</div>
-									      </div>
-									    </div>
-									  </div>
-									  <div class="options-grid-item">
-									    <div class="flip-card-inner">
-									      <div class="flip-card flip-card-front">
-									        <h3 class="title">Buy Back Program</h3>
-									      </div>
-									      <div class="flip-card flip-card-back">
-									        <div class="text_flip_card">
-									      		<p>In order to save your credit score & regain financial stability, it may be in your best interest to sell your home that is not adding to your financial health. This is not mentally or emotionally easy departing with your home that is a good long term fit for your family. We’ll buy your home as is, rehab it while allowing you to catch your “financial second wind”.</p>
-									      		<p>With an earnest money deposit & payments, after the agreed time frame, you’ll be able to purchase & move back into your old home that’s new & improved.</p>
-									      	</div>
-									      </div>
-									    </div>
-									  </div>
+									  <?php 
+											endwhile;
+										endif; ?>
 									</div>
 								</div>
 							</div>
@@ -121,18 +92,32 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				</div>
 
 				<!-- Call To Action -->
-				<div id="call-to-action" class="call-to-action-sctn et_pb_section et_section_regular">
-					<div class="call-to-action-rw stndrd-rw et_pb_row et_pb_equal_columns">
-						<div class="call-to-action-col et_pb_column et_pb_column_4_4">
-							<div class="call-to-action et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
-								<div class="et_pb_text_inner">
-									<p class="call-to-action-text small-container">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-									<a href="#" class="call-to-action-btn btn btn-darkblue align-center">Learn More</a>
+				<?php 
+					if( have_rows('call_to_action') ):
+						while( have_rows('call_to_action') ): the_row(); 
+							$main_text = get_sub_field('main_text');
+							$button_link = get_sub_field('button_link');
+							$button_text = get_sub_field('button_text');
+
+							if( $main_text && $button_link && $button_text ):
+				?>
+								<div id="call-to-action" class="call-to-action-sctn et_pb_section et_section_regular">
+									<div class="call-to-action-rw stndrd-rw et_pb_row et_pb_equal_columns">
+										<div class="call-to-action-col et_pb_column et_pb_column_4_4">
+											<div class="call-to-action et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
+												<div class="et_pb_text_inner">
+													<p class="call-to-action-text small-container"><?php echo $main_text; ?></p>
+													<a href="<?php echo $button_link; ?>" class="call-to-action-btn btn btn-darkblue align-center"><?php echo $button_text; ?></a>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php 
+							endif;
+						endwhile;
+					endif; 
+				?>
 			</div> <!-- .entry-content -->
 
 		<?php
