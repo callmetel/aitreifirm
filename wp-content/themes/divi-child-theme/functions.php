@@ -305,7 +305,7 @@ function my_acf_op_init() {
 }
 
 function my_login_stylesheet() {
-    wp_enqueue_script( 'custom-login', 'login.js' );
+    wp_enqueue_script( 'custom-login', '/login.js' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 ?>
