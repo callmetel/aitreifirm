@@ -303,4 +303,9 @@ function my_acf_op_init() {
         ));
     }
 }
+
+function my_login_stylesheet() {
+    wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/js/login.js' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 ?>
