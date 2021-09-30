@@ -46,6 +46,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							<div class="et_pb_column et_pb_column_4_4 sbpg-cntnt">
 								<div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
 									<div class="et_pb_text_inner darkblue">
+										<?php et_divi_post_meta(); ?>
 										<?php
 											do_action( 'et_before_content' );
 
