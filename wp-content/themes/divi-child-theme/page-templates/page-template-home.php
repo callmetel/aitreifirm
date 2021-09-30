@@ -42,7 +42,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
     		<?php while( have_rows('banner') ): the_row(); ?>
 					<?php 
 						// Banner Image 
-						$imageUrl = site_url('/wp-content/uploads/home-bg.jpg');
+						$imageUrl = the_sub_field('background_image');
 				  ?>
 					<style>
 						@media only screen and (min-width: 981px) {
