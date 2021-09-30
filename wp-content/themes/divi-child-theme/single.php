@@ -39,13 +39,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<!-- End Subpage Banner -->
 
 					<!-- Subpage Content -->
-					<div class="et_pb_section sbpg-cntnt-sctn et_section_regular">
+					<div class="et_pb_section sbpg-cntnt-sctn et_section_regular offwhite-bg">
 						<div class="sbpg-cntnt-rw sm-rw et_pb_row et_pb_equal_columns">
 
 							<!-- Subpage Left Content -->
 							<div class="et_pb_column et_pb_column_4_4 sbpg-cntnt">
 								<div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
-									<div class="et_pb_text_inner">
+									<div class="et_pb_text_inner darkblue">
 										<?php
 											do_action( 'et_before_content' );
 
