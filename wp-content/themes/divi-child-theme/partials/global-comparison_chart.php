@@ -12,7 +12,7 @@ if( have_rows('comparing_ait','options') ):
               <h2 class="h3 chart-title"><?php echo $title; ?></h2>
               <?php
                 if($paragraph):
-                  echo '<p class="chart-subtitle">'.$paragraph.'</p>';
+                  echo '<div class="chart-subtitle">'.$paragraph.'</div>';
                 endif;
               ?>
             </div>
