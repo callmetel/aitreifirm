@@ -22,23 +22,15 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<div class="entry-content">
 
 					<!-- Subpage Banner -->
-					<?php 
-						// Get Featured Image 
-
-					    if ( has_post_thumbnail( $post->ID ) ) :
-					        $imageInfo = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-					        $imageUrl = $imageInfo[0];
-					    else:
-					        $imageUrl = '/wp-content/uploads/banner-about.jpg';
-					    endif;
-					  ?>
-
-					<div class="et_pb_section sbpg-bnnr-sctn et_section_regular" style="background-image: url('<?php echo $imageUrl; ?>'); background-size: cover;">
-						<div class="sbpg-bnnr-rw et_pb_row">
-							<div class="et_pb_column et_pb_column_4_4">
-								<div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_center sbpg-bnnr-title">
+					<div id="banner" class="banner banner-internal et_pb_section sbpg-bnnr-sctn et_section_regular">
+						<div class="sbpg-bnnr-rw stndrd-rw et_pb_row">
+							<div class="sbpg-bnnr-col et_pb_column et_pb_column_4_4">
+								<div class="sbpg-bnnr et_pb_text et_pb_module et_pb_bg_layout_light">
 									<div class="et_pb_text_inner">
-										<h1><?php the_title(); ?></h1>	
+										<h1 class="page-title">
+											<span class="sub-title">Blog</span>
+											<span class="main-title"><?php the_title(); ?></span>
+										</h1>	
 									</div>
 								</div> <!-- .et_pb_text -->
 							</div> <!-- .et_pb_column -->
@@ -48,10 +40,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 					<!-- Subpage Content -->
 					<div class="et_pb_section sbpg-cntnt-sctn et_section_regular">
-						<div class="sbpg-cntnt-rw et_pb_row et_pb_equal_columns">
+						<div class="sbpg-cntnt-rw sm-rw et_pb_row et_pb_equal_columns">
 
 							<!-- Subpage Left Content -->
-							<div class="et_pb_column et_pb_column_2_3 sbpg-cntnt">
+							<div class="et_pb_column et_pb_column_4_4 sbpg-cntnt">
 								<div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left">
 									<div class="et_pb_text_inner">
 										<?php
@@ -83,12 +75,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 										</div> <!-- .et_post_meta_wrapper -->
 									</div>
 								</div>
-							</div> <!-- .et_pb_column -->
-
-							<!-- Subpage Right Sidebar -->
-							<div class="et_pb_column et_pb_column_1_3 sbpg-sdbr">
-								<!-- Sidebar Divi Library Items -->
-								<?php echo do_shortcode('[et_pb_section global_module="25232"][/et_pb_section]');?>
 							</div> <!-- .et_pb_column -->
 						</div> <!-- .et_pb_row -->
 					</div>
