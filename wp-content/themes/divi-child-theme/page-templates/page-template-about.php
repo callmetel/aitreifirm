@@ -62,7 +62,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							<div class="content et_pb_text et_pb_module et_pb_bg_layout_dark et_pb_text_align_center">
 								<div class="et_pb_text_inner">
 									<div class="blurb">
-										<span class="founded">Founded in <?php the_field('founded_in'); ?></span>
+										<span class="founded">Based in <?php the_field('founded_in'); ?></span>
 										<h4><?php the_field('founded_pull_quote'); ?></h4>
 									</div>
 								</div>
