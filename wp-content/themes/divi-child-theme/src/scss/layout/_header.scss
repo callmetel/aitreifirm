@@ -61,7 +61,8 @@ body {
 					}
 
 					&.current-menu-item,
-					&.current-page-ancestor {
+					&.current-page-ancestor,
+					&.current_page_parent {
 						.menu-image-title {
 							position: relative;
 
