@@ -1,4 +1,5 @@
 body:not(.udb-role-administrator) .et_pb_toggle_builder_wrapper,
-body:not(.udb-role-administrator) #et_settings_meta_box {
+body:not(.udb-role-administrator) #et_settings_meta_box,
+body:not(.udb-role-administrator) .hide-if-no-customize {
   display: none!important;
 }
