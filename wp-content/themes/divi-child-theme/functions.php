@@ -193,6 +193,7 @@
 			remove_menu_page('tools.php'); // Tools
 			remove_menu_page('options-general.php'); // Settings
 			remove_menu_page('wp-defender'); // Defender
+			remove_menu_page('litespeed') // Litespeed Cache
 			remove_submenu_page( 'gf_edit_forms', 'gf_new_formf_help' );
 			remove_submenu_page( 'gf_edit_forms', 'gf_export' );
 			remove_submenu_page( 'gf_edit_forms', 'gf_help' );
@@ -261,18 +262,18 @@ function admin_style() {
 add_action('admin_enqueue_scripts', 'admin_style');
 
 // Show Admin Menu Pages 
-if (!function_exists('debug_admin_menus')):
-function debug_admin_menus() {
-if ( !is_admin())
-        return;
-    global $submenu, $menu, $pagenow;
-    if ( current_user_can('manage_options') ) { // ONLY DO THIS FOR ADMIN
-        if( $pagenow == 'index.php' ) {  // PRINTS ON DASHBOARD
-            echo '<pre>'; print_r( $menu ); echo '</pre>'; // TOP LEVEL MENUS
-            echo '<pre>'; print_r( $submenu ); echo '</pre>'; // SUBMENUS
-        }
-    }
-}
-add_action( 'admin_notices', 'debug_admin_menus' );
-endif;
+// if (!function_exists('debug_admin_menus')):
+// function debug_admin_menus() {
+// if ( !is_admin())
+//         return;
+//     global $submenu, $menu, $pagenow;
+//     if ( current_user_can('manage_options') ) { // ONLY DO THIS FOR ADMIN
+//         if( $pagenow == 'index.php' ) {  // PRINTS ON DASHBOARD
+//             echo '<pre>'; print_r( $menu ); echo '</pre>'; // TOP LEVEL MENUS
+//             echo '<pre>'; print_r( $submenu ); echo '</pre>'; // SUBMENUS
+//         }
+//     }
+// }
+// add_action( 'admin_notices', 'debug_admin_menus' );
+// endif;
 ?>
