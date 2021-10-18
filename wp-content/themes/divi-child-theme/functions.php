@@ -256,4 +256,15 @@ add_action('admin_enqueue_scripts', 'admin_style');
 // }
 // add_action( 'admin_notices', 'debug_admin_menus' );
 // endif;
+
+function remove_admin_bar_links() {
+    global $wp_admin_bar, $current_user;
+    
+    if ($current_user->ID != 1) {
+        $wp_admin_bar->remove_menu('updates');          // Remove the updates link
+        $wp_admin_bar->remove_menu('comments');         // Remove the comments link
+        $wp_admin_bar->remove_menu('appearance');       // Remove appearance links
+    }
+}
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 ?>
