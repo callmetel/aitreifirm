@@ -9,7 +9,6 @@
 	    wp_register_script('custom_script', get_stylesheet_directory_uri() . '/js/scripts.min.js', 'jquery', true); // true will place script in the footer
 	    wp_enqueue_script( 'custom_script' );
 	}
-	add_action('wp_enqueue_scripts', 'load_custom_scripts', 99);
 
 	// Add function to check if on edit page in admin
 	function is_edit_page($new_edit = null){
@@ -26,11 +25,16 @@
 	        return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
 	}
 
+	// Enqueue Scripts on Frontend Only
+	if(!is_admin() && !is_edit_page()) {
+    add_action('wp_enqueue_scripts', 'load_custom_scripts', 99);
+	}
+
 	// Remove Query Strings From Static Resources 
-	// function _remove_script_version( $src ){ 
-	// $parts = explode( '?', $src ); 	
-	// return $parts[0]; 
-	// } 
+	function _remove_script_version( $src ){ 
+	$parts = explode( '?', $src ); 	
+	return $parts[0]; 
+	} 
 	// add_filter( 'script_loader_src', '_remove_script_version', 15, 1 ); 
 	add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
 
