@@ -2,10 +2,15 @@
 
 body {
 	#lead-form {
-		background-image: url('#{$path-uploads}/lead-bg.svg');
-		background-size: cover;
-		background-position: bottom left;
-		padding: 125px 0;
+		background-color: $white;
+		padding: 80px 0;
+
+		@include mq(phone-wide,min) {
+			background-image: url('#{$path-uploads}/lead-bg.svg');
+			background-size: cover;
+			background-position: bottom left;
+			padding: 125px 0;
+		}
 
 		.sm-rw {
 			.et_pb_column {
