@@ -192,6 +192,7 @@
 			remove_menu_page('themes.php'); // Appearance
 			remove_menu_page('tools.php'); // Tools
 			remove_menu_page('options-general.php'); // Settings
+			remove_menu_page('wp-defender'); // Defender
 			remove_submenu_page( 'gf_edit_forms', 'gf_new_formf_help' );
 			remove_submenu_page( 'gf_edit_forms', 'gf_export' );
 			remove_submenu_page( 'gf_edit_forms', 'gf_help' );

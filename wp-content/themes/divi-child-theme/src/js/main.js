@@ -39,27 +39,27 @@ jQuery(document).ready(function ($) {
       }
     });
     
-    // $('a').each(function(){
-    //   if($('body').hasClass('home') && !$(this).isExternal()) {
-    //     $(this).attr({
-    //       rel: 'dofollow'
-    //     });
-    //   }
-    //   else if($('body').hasClass('home') && $(this).isExternal()) {
-    //     $(this).attr({
-    //       rel: 'nofollow noreferrer',
-    //       target: '_blank'
-    //     });
-    //   }
-    //   else {
-    //     if($(this).isExternal()) {
-    //       $(this).attr({
-    //         rel: 'nofollow noreferrer',
-    //         target: '_blank'
-    //       });
-    //     }
-    //   }
-    // });
+    $('a').each(function(){
+      if($('body').hasClass('home') && !$(this).isExternal()) {
+        $(this).attr({
+          rel: 'dofollow'
+        });
+      }
+      else if($('body').hasClass('home') && $(this).isExternal()) {
+        $(this).attr({
+          rel: 'nofollow noreferrer',
+          target: '_blank'
+        });
+      }
+      else {
+        if($(this).isExternal()) {
+          $(this).attr({
+            rel: 'nofollow noreferrer',
+            target: '_blank'
+          });
+        }
+      }
+    });
 
     if ( $("#mobile_menu").parents(".mobile_nav").length == 1 ) { 
       console.log('already has mobile menu');
