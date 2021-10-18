@@ -180,27 +180,6 @@
 	}
 	add_action('init','remove_divi_projects');
 
-	// Remove Specific Menu Items for Site Managers
-	add_action( 'admin_init', 'my_remove_menu_pages' );
-	function my_remove_menu_pages() {
-
-		$user = wp_get_current_user();
-
-		if ( in_array( 'site_manager', (array) $user->roles ) ) {
-			remove_menu_page('link-manager.php'); // Links
-			remove_menu_page('edit-comments.php'); // Comments
-			remove_menu_page('themes.php'); // Appearance
-			remove_menu_page('tools.php'); // Tools
-			remove_menu_page('options-general.php'); // Settings
-			remove_menu_page('wp-defender'); // Defender
-			remove_menu_page('litespeed'); // Litespeed Cache
-			remove_menu_page('aioseo'); // All In One SEO
-			remove_submenu_page( 'gf_edit_forms', 'gf_new_formf_help' );
-			remove_submenu_page( 'gf_edit_forms', 'gf_export' );
-			remove_submenu_page( 'gf_edit_forms', 'gf_help' );
-		}
-	}
-
 // Add Global Options for ACF Field
 add_action('acf/init', 'my_acf_op_init');
 function my_acf_op_init() {
