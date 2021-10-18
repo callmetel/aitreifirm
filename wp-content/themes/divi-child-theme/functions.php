@@ -180,79 +180,23 @@
 	}
 	add_action('init','remove_divi_projects');
 
-	// Move Gravity Forms Scripts to Footer
-	add_filter( 'gform_init_scripts_footer', '__return_true' );
-
-	// Remove Specific Menu Items for Shop Managers
+	// Remove Specific Menu Items for Site Managers
 	add_action( 'admin_init', 'my_remove_menu_pages' );
 	function my_remove_menu_pages() {
 
 		$user = wp_get_current_user();
 
-		if ( in_array( 'shop_manager', (array) $user->roles ) ) {
+		if ( in_array( 'site_manager', (array) $user->roles ) ) {
 			remove_menu_page('link-manager.php'); // Links
 			remove_menu_page('edit-comments.php'); // Comments
-			remove_menu_page('edit.php?post_type=page'); // Pages
-			remove_menu_page('plugins.php'); // Plugins
 			remove_menu_page('themes.php'); // Appearance
-			remove_menu_page('users.php'); // Users
 			remove_menu_page('tools.php'); // Tools
 			remove_menu_page('options-general.php'); // Settings
-
-			// WooCommerce Links
-			remove_submenu_page( 'woocommerce', 'edit.php?post_type=wc_zapier_feed' ); // Zapier Feeds
-			remove_submenu_page( 'woocommerce', 'wf_woocommerce_order_im_ex' ); // Order Export/Import
-			remove_submenu_page( 'woocommerce', 'wf_coupon_csv_im_ex' ); // Coupon Export/Import
-			remove_submenu_page( 'woocommerce', 'wf_woocommerce_subscription_order_im_ex' ); // Subscription Export/Import
-			remove_submenu_page( 'woocommerce', 'wf_woocommerce_order_im_ex_xml' ); // Order XML Export/Import
-			remove_submenu_page( 'woocommerce', 'checkout_form_designer' ); // Checkout Form
-			remove_submenu_page( 'woocommerce', 'wc-addons' ); // Extensions
-			remove_submenu_page( 'woocommerce', 'wc-status' ); // Status
-			remove_submenu_page( 'woocommerce', 'wc-settings' ); // Settings
-	    remove_submenu_page( 'woocommerce', 'wc-credits' ); // Credits
-	    remove_submenu_page( 'woocommerce', 'wc-translators' ); // Translators
+			remove_submenu_page( 'gf_edit_forms', 'gf_new_formf_help' );
+			remove_submenu_page( 'gf_edit_forms', 'gf_export' );
+			remove_submenu_page( 'gf_edit_forms', 'gf_help' );
 		}
 	}
-
-	// Disable Ajax Call from WooCommerce on front page and posts*/
-add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11);
-function dequeue_woocommerce_cart_fragments() {
-if (is_front_page() || is_single() ) wp_dequeue_script('wc-cart-fragments');
-}
-
-// Disable All WooCommerce  Styles and Scripts Except Shop Pages*/
-add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_styles_scripts', 99 );
-function dequeue_woocommerce_styles_scripts() {
-	if ( function_exists( 'is_woocommerce' ) ) {
-		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
-			# Styles
-			wp_dequeue_style( 'woocommerce-general' );
-			wp_dequeue_style( 'woocommerce-layout' );
-			wp_dequeue_style( 'woocommerce-smallscreen' );
-			wp_dequeue_style( 'woocommerce_frontend_styles' );
-			wp_dequeue_style( 'woocommerce_fancybox_styles' );
-			wp_dequeue_style( 'woocommerce_chosen_styles' );
-			wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
-			# Scripts
-			wp_dequeue_script( 'wc_price_slider' );
-			wp_dequeue_script( 'wc-single-product' );
-			wp_dequeue_script( 'wc-add-to-cart' );
-			wp_dequeue_script( 'wc-cart-fragments' );
-			wp_dequeue_script( 'wc-checkout' );
-			wp_dequeue_script( 'wc-add-to-cart-variation' );
-			wp_dequeue_script( 'wc-single-product' );
-			wp_dequeue_script( 'wc-cart' );
-			wp_dequeue_script( 'wc-chosen' );
-			wp_dequeue_script( 'woocommerce' );
-			wp_dequeue_script( 'prettyPhoto' );
-			wp_dequeue_script( 'prettyPhoto-init' );
-			wp_dequeue_script( 'jquery-blockui' );
-			wp_dequeue_script( 'jquery-placeholder' );
-			wp_dequeue_script( 'fancybox' );
-			wp_dequeue_script( 'jqueryui' );
-		}
-	}
-}
 
 // Add Global Options for ACF Field
 add_action('acf/init', 'my_acf_op_init');
